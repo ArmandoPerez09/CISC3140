@@ -1,9 +1,16 @@
-BEGIN{FS = ","}
-#BODY
-{	
-	total = 0
-	for (i = 8; i <= NF; ++i) {
-		total = total + $i
-	}
-	print total "\t" $7 "\t" $4 "\t" $5 "\t" $6 > "output"
+BEGIN{FS = ","
+	print "Car_ID" "||" "Year" "||" "Make" "||" "Model" "||" "Ranks" > "ranks"
 }
+#BODY
+{
+	if (NR==1) 
+	{false}
+	else {
+		total = 0
+		for (i = 8; i <= NF; ++i) {
+			total = total + $i
+		}
+        	print $7 "||" $4 "||" $5 "||" $6 "||" total > "ranks"
+	}
+}
+
