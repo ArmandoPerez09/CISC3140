@@ -11,6 +11,7 @@ BEGIN{FS = ","
 			total = total + $i
 		}
         	print $7 "|" $4 "|" $5 "|" $6 "|" total > "ranks"
+                print $7 "|" $4 "|" $5 "|" $6 "|" total > "top_3"
 	}
 }
 END{}
