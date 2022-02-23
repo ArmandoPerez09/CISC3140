@@ -1,4 +1,8 @@
-Description of Report Content
+Lab 1
+Extract information from the provided csv file and compile new data.
+Aggregates individual scores of each car to generate a ranking
+Sort in descending order using the generated rankings
+List the top three cars (based on rankings) for each maker
 
 Description of raw data
 
