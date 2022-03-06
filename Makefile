@@ -23,6 +23,8 @@ lab1:
 	mv top_3 Lab1
 	#Display the files
 	echo "\n\n"
+	cat Lab1/data_lab1/data.csv
+	echo "\n\n"
 	cat Lab1/sorted_ranks
 	echo "\n\n"
 	cat Lab1/top_3
