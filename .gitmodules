@@ -1,3 +1,6 @@
 [submodule "Lab2/d66a59b6db4e59c16efd4c42ad411f8e"]
 	path = Lab2/d66a59b6db4e59c16efd4c42ad411f8e
 	url = https://gist.github.com/katychuang/d66a59b6db4e59c16efd4c42ad411f8e
+[submodule "cisc3140_lab3"]
+	path = cisc3140_lab3
+	url = https://github.com/ArmandoPerez09/cisc3140_lab3
