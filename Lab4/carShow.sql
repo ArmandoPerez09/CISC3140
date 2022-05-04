@@ -5,14 +5,14 @@
 
 --All Cars--
 CREATE TABLE cars AS
-SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry Number",
-Car_ID as "Car ID", Make, Year, Model FROM carShowInfo
-ORDER BY "Entry Number" asc;
+SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry_Number",
+Car_ID, Make, Year, Model FROM carShowInfo
+ORDER BY "Entry_Number" asc;
 
 --All Owners--
 CREATE TABLE owners AS
-SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry Number",
-Car_ID as "Car ID", Name as Owner, Email, Make, Year, Model,
+SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry_Number",
+Car_ID, Name as Owner, Email, Make, Year, Model,
 --Total Score--
 (Racer_Turbo + Racer_Supercharged + Racer_Performance + Racer_Horsepower + Car_Overall + 
 Engine_Modifications + Engine_Performance + Engine_Chrome + Engine_Detailing + 
@@ -20,19 +20,19 @@ Engine_Cleanliness + Body_Frame_Undercarriage + Body_Frame_Suspension + Body_Fra
 Body_Frame_Detailing + Body_Frame_Cleanliness + Mods_Paint + Mods_Body + Mods_Wrap + 
 Mods_Rims + Mods_Interior + Mods_Other + Mods_ICE + Mods_Aftermarket + Mods_WIP + Mods_Overall) as Score 
 FROM carShowInfo
-ORDER BY "Entry Number" asc;
+ORDER BY "Entry_Number" asc;
 
 --All Judges--
 CREATE TABLE judges AS
-SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry Number",
-Judge_ID as "Judge ID", Judge_Name as "Judge Name", count(*) as "Cars Scored", 
-MIN(Timestamp) as "Start Time", MAX(Timestamp) as "End Time"
+SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry_Number",
+Judge_ID, Judge_Name, count(*) as "Cars_Scored", 
+MIN(Timestamp) as "Start_Time", MAX(Timestamp) as "End_Time"
 FROM carShowInfo
 GROUP BY Judge_ID;
 
 --Car Scores--
 CREATE TABLE scores AS
-SELECT Car_ID as "Car ID",Make,Year,Model,
+SELECT Car_ID,Make,Year,Model,
 --Total Score--
 (Racer_Turbo + Racer_Supercharged + Racer_Performance + Racer_Horsepower + Car_Overall + 
 Engine_Modifications + Engine_Performance + Engine_Chrome + Engine_Detailing + 
@@ -51,9 +51,9 @@ Body_Frame_Detailing + Body_Frame_Cleanliness) as Body,
 (Mods_Paint + Mods_Body + Mods_Wrap + Mods_Rims + Mods_Interior + Mods_Other + 
 Mods_ICE + Mods_Aftermarket + Mods_WIP) as Mods,
 --Car Overall Score--
-(Car_Overall) as "Car Ovr",
+(Car_Overall) as "Car_Ovr",
 --Mod Overall Score--
-(Mods_Overall) as "Mods Ovr"
+(Mods_Overall) as "Mods_Ovr"
 FROM carShowInfo
 ORDER BY cast(Score as unsigned) desc;
 

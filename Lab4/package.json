@@ -9,7 +9,9 @@
   "author": "Armando Perez",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "md5": "^2.3.0",
+    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
