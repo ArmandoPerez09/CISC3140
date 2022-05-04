@@ -47,3 +47,4 @@ MD5 - npm install md5
 * localhost:3000/judges/:Judge_ID	- Displays single record in cars table using Judge_ID as key
 * localhost:3000/scores 			- Displays all data in scores table stored in carShow.db
 * localhost:3000/scores/:Car_ID		- Displays single record in scores table using Car_ID as key
+* POST PATCH DELETE Endpoints to be added
