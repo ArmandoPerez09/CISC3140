@@ -15,6 +15,8 @@ app.listen(PORT, () => console.log(`Express server currently running on port ${P
 app.get('/', (request, response) => {	
   response.send('Lab 4: Javascript & SQL API Using Express');
 });
+
+//Cars Table
 //Display Car Table from carShow.db
 app.get('/cars/', (request, response) => {	
   db.serialize(function(){
@@ -23,6 +25,22 @@ app.get('/cars/', (request, response) => {
 	})
   })
 });
+
+//Displays single record using Car_ID as key for cars table
+app.get("/cars/:Car_ID", (request, response) => {	
+  var params = [request.params.Car_ID]
+  db.serialize(function(){
+	  db.all("SELECT * FROM cars WHERE Car_ID = ?;", params, function(err, table) {
+		if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+		response.json(table);
+	})
+  })
+});
+
+//Owners Table
 //Display Owners table from carShow.db
 app.get('/owners/', (request, response) => {	
   db.serialize(function(){
@@ -31,6 +49,22 @@ app.get('/owners/', (request, response) => {
 	})
   })
 });
+
+//Display single record using Car_ID as key for owners table
+app.get("/owners/:Car_ID", (request, response) => {	
+  var params = [request.params.Car_ID]
+  db.serialize(function(){
+	  db.all("SELECT * FROM owners WHERE Car_ID = ?;", params, function(err, table) {
+		if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+		response.json(table);
+	})
+  })
+});
+
+//Judges Table
 //Display Judges Table from carShow.db
 app.get('/judges/', (request, response) => {	
   db.serialize(function(){
@@ -39,11 +73,41 @@ app.get('/judges/', (request, response) => {
 	})
   })
 });
+
+//Display single record using Judge_ID as key for judges table
+app.get("/judges/:Judge_ID", (request, response) => {	
+  var params = [request.params.Judge_ID]
+  db.serialize(function(){
+	  db.all("SELECT * FROM judges WHERE Judge_ID = ?;", params, function(err, table) {
+		if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+		response.json(table);
+	})
+  })
+});
+
+//Scores Table
 //Display Scores Table from carShow.db
 app.get('/scores/', (request, response) => {	
   db.serialize(function(){
 	  db.all("SELECT * FROM scores;", function(err, table) {
 		  response.json(table);
+	})
+  })
+});
+
+//Display single record using Car_ID as key for scores table
+app.get("/scores/:Car_ID", (request, response) => {	
+  var params = [request.params.Car_ID]
+  db.serialize(function(){
+	  db.all("SELECT * FROM scores WHERE Car_ID = ?;", params, function(err, table) {
+		if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+		response.json(table);
 	})
   })
 });

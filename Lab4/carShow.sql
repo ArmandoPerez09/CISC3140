@@ -1,3 +1,5 @@
+--REFERNCE FILE FOR CREATING DATABASE USING SQLITE3--
+
 .mode csv
 .mode column
 .header on
