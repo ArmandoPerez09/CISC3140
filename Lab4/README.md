@@ -35,4 +35,15 @@ MD5 - npm install md5
 
 ## Instructions
 * From Terminal, Run command `node index.js` in lab4 root directory of program
+* Run a web browser and in the url, search "localhost:3000"
 
+## API Endpoints
+* localhost:3000/ 					- Start point of the API
+* localhost:3000/cars 				- Displays all data in cars table stored in carShow.db
+* localhost:3000/cars/:Car_ID		- Displays single record in cars table using Car_ID as key
+* localhost:3000/owners 			- Displays all data in owners table stored in carShow.db
+* localhost:3000/owners/:Car_ID		- Displays single record in owners table using Car_ID as key
+* localhost:3000/judges 			- Displays all data in judges table stored in carShow.db
+* localhost:3000/judges/:Judge_ID	- Displays single record in cars table using Judge_ID as key
+* localhost:3000/scores 			- Displays all data in scores table stored in carShow.db
+* localhost:3000/scores/:Car_ID		- Displays single record in scores table using Car_ID as key

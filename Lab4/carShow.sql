@@ -7,14 +7,12 @@
 
 --All Cars--
 CREATE TABLE cars AS
-SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry_Number",
-Car_ID, Make, Year, Model FROM carShowInfo
+SELECT Car_ID, Make, Year, Model FROM carShowInfo
 ORDER BY "Entry_Number" asc;
 
 --All Owners--
 CREATE TABLE owners AS
-SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry_Number",
-Car_ID, Name as Owner, Email, Make, Year, Model,
+SELECT Car_ID, Name as Owner, Email, Make, Year, Model,
 --Total Score--
 (Racer_Turbo + Racer_Supercharged + Racer_Performance + Racer_Horsepower + Car_Overall + 
 Engine_Modifications + Engine_Performance + Engine_Chrome + Engine_Detailing + 
@@ -26,8 +24,7 @@ ORDER BY "Entry_Number" asc;
 
 --All Judges--
 CREATE TABLE judges AS
-SELECT ROW_NUMBER() OVER (ORDER BY (SELECT 1)) as "Entry_Number",
-Judge_ID, Judge_Name, count(*) as "Cars_Scored", 
+SELECT Judge_ID, Judge_Name, count(*) as "Cars_Scored", 
 MIN(Timestamp) as "Start_Time", MAX(Timestamp) as "End_Time"
 FROM carShowInfo
 GROUP BY Judge_ID;
