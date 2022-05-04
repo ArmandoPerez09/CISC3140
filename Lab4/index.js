@@ -11,38 +11,38 @@ app.use(express.json());
 app.listen(PORT, () => console.log(`Express server currently running on port ${PORT}`));
 
 //ROUTES-API ENDPOINTS
-//Root-Home
-app.get('/lab4/', (request, response){	
+//ROOT
+app.get('/', (request, response) => {	
   response.send('Lab 4: Javascript & SQL API Using Express');
 });
 //Display Car Table from carShow.db
-app.get('lab4/cars/', (request, response){	
+app.get('/cars/', (request, response) => {	
   db.serialize(function(){
-	  db.all("SELECT * FROM cars;", function(err, table){
+	  db.all("SELECT * FROM cars;", function(err, table) {
 		  response.json(table);
 	})
   })
 });
 //Display Owners table from carShow.db
-app.get('lab4/owners/', (request, response){	
+app.get('/owners/', (request, response) => {	
   db.serialize(function(){
-	  db.all("SELECT * FROM owners;", function(err, table){
+	  db.all("SELECT * FROM owners;", function(err, table) {
 		  response.json(table);
 	})
   })
 });
 //Display Judges Table from carShow.db
-app.get('lab4/judges/', (request, response){	
+app.get('/judges/', (request, response) => {	
   db.serialize(function(){
-	  db.all("SELECT * FROM judges;", function(err, table){
+	  db.all("SELECT * FROM judges;", function(err, table) {
 		  response.json(table);
 	})
   })
 });
 //Display Scores Table from carShow.db
-app.get('lab4/scores/', (request, response){	
+app.get('/scores/', (request, response) => {	
   db.serialize(function(){
-	  db.all("SELECT * FROM scores;", function(err, table){
+	  db.all("SELECT * FROM scores;", function(err, table) {
 		  response.json(table);
 	})
   })
