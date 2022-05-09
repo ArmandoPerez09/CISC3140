@@ -1,0 +1,15 @@
+{
+  "name": "lab5",
+  "version": "1.0.0",
+  "description": "Implement the frontend section of Lab4",
+  "main": "mock-CRUD.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armando Perez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "sqlite3": "^5.0.8"
+  }
+}
