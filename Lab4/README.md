@@ -38,13 +38,29 @@ MD5 - npm install md5
 * Run a web browser and in the url, search "localhost:3000"
 
 ## API Endpoints
-* localhost:3000/ 					- Start point of the API
-* localhost:3000/cars 				- Displays all data in cars table stored in carShow.db
-* localhost:3000/cars/:Car_ID		- Displays single record in cars table using Car_ID as key
-* localhost:3000/owners 			- Displays all data in owners table stored in carShow.db
-* localhost:3000/owners/:Car_ID		- Displays single record in owners table using Car_ID as key
-* localhost:3000/judges 			- Displays all data in judges table stored in carShow.db
-* localhost:3000/judges/:Judge_ID	- Displays single record in cars table using Judge_ID as key
-* localhost:3000/scores 			- Displays all data in scores table stored in carShow.db
-* localhost:3000/scores/:Car_ID		- Displays single record in scores table using Car_ID as key
-* POST PATCH DELETE Endpoints to be added
+* localhost:3000/ 		- Start point of the API
+### Create Operations
+* ./allCars/add/:id/:maker/:year/:model	- Adds new entry to cars table with id, maker, year, and model as values 
+* ./owners/add/:id/:name/:email		- Adds new entry to owners table with id, name, and email as values
+
+### Read Operations
+* ./allCars 			- Displays all data in cars table stored in carShow.db
+* ./allCars/:id		- Displays car with chosen id in cars table
+* ./allCars/maker/:maker	- Displays all cars of chosen maker in cars table
+* ./allCars/model/:model	- Displays all cars of chosen model in cars table
+* ./owners			- Displays all owners
+* ./winners 			- Displays cars overall scores
+* ./winners/racers		- Display racer scores
+* ./winners/engine		- Display engine scores
+* ./winners/body		- Displays body scores
+* ./winners/mods		- Displays mods scores
+* ./winners/carOverall		- Displays car overall scores
+* ./winners/modsOverall	- Displays mods overall scores
+
+### Update Operations
+* ./owners/update/name/:id/:name	- Updates name of owner with corresponding car id
+* ./owners/update/email/:id/:email	- Updates email of owner with corresponding car id
+
+### Delete Operations
+* ./allCars/del/:id'		- Deletes car with corresponding car id
+* ./owners/del/:id'		- Deletes owner with corresponding car id

@@ -136,3 +136,9 @@ GROUP BY Judge_ID;
 --END OF PROGRAM
 .save Lab2.db
 .quit
+CREATE TABLE allCars (
+    CarID INT NOT NULL PRIMARY KEY,
+    Maker VARCHAR(255),
+    Year INT,
+	Model VARCHAR(255)
+);
